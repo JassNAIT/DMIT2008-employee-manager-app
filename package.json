@@ -1,0 +1,27 @@
+{
+  "name": "employee-manager-application",
+  "version": "1.0.0",
+  "description": "Manage login and signup for the employees",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon server/index.js  --watch ./server",
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JassNAIT/DMIT2008-employee-manager-app.git"
+  },
+  "author": "Jaswinder Kaur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JassNAIT/DMIT2008-employee-manager-app/issues"
+  },
+  "homepage": "https://github.com/JassNAIT/DMIT2008-employee-manager-app#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.10.0",
+    "nodemon": "^2.0.7",
+    "uuid": "^8.3.2"
+  }
+}
