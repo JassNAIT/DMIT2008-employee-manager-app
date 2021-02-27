@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+  </nav>
+   
+
+    <aside class="app-form">
+      <header class="form-header"><h2>Login Form</h2></header>
+    
+      <form id="login" action="/login" method="POST">
+        
+        <div class="form-control">
+          <label for="email">Account email address 
+          <input
+            id="email"
+            type="text"
+            name="email"
+            placeholder="account@email.com"
+            value=""
+          />
+     
+        </div>
+
+        <div class="form-control">
+          <label for="password">
+            Account password
+          <input
+            id="password"
+            type="text"
+            name="password"
+            placeholder="account password "
+          />
+        </div>
+
+        <div class="form-control">
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </aside>
+    
+  </body>
+</html>
