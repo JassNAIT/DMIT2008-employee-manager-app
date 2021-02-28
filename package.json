@@ -2,7 +2,7 @@
   "name": "employee-manager-application",
   "version": "1.0.0",
   "description": "Manage login and signup for the employees",
-  "main": "index.js",
+  "main": "server/index.js",
   "engines":{
     "node":"v12.16.x"
   },
