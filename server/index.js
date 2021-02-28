@@ -3,9 +3,13 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const session = require('express-session');
+const { v4: uuidv4 } = require('uuid');
 // creating an instance of express
 const app = express();
 const loginService = require('./services/loginService');
+const registerService = require('./services/registerService');
+const userData = require('./data/users');
+//console.log(userData);
 const PORT =  process.env.PORT || 5000 
 
 // Middleware
@@ -14,8 +18,10 @@ app.use(express.json());
 
 app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}))
 app.use(express.urlencoded({extended:true}));
+
 app.set('view engine','ejs');
-app.set('views',path.join(__dirname,'./views'))
+app.set('views',path.join(__dirname,'./views'));
+
 app.use(express.static(path.join(__dirname, "../client"),{
        dotfiles: "ignore",
         extensions: ["html","htm"]
@@ -24,11 +30,18 @@ app.use(express.static(path.join(__dirname, "../client"),{
 
   app.get('/dashboard',(req, res)=>{
       if(req.session.isValid){
-        res.render('dashboard')
+        res.render('dashboard',{emailWarning:"", passwordWarning:""})
       }else{
-        res.render('/login')
+        res.render('login',{emailWarning:"", passwordWarning:""})
       }
      
+  })
+  app.get('/register',(req,res)=>{
+      res.render('login');
+  })
+
+  app.get('/users',(req,res)=>{
+    res.render('users');
   })
 
   app.get('/login',(req,res)=>{
@@ -63,20 +76,28 @@ app.use(express.static(path.join(__dirname, "../client"),{
     })
 
     app.post('/register',(req, res)=>{
-        console.log('here it is');
       console.log(req.body);
+      const credentials ={
+        userid:uuidv4(),
+        username:req.body.username,
+        email:req.body.email,
+        password:req.body.password
+    }
+    const userData = registerService.writeFile(credentials);
+ 
+      res.redirect('login');
      // res.send("trying to register");
-      })
+    })
 
-app.get('/api/users',(req,res)=>{
-    res.send('users api starting');
-})
+    app.get('/api/users',(req,res)=>{
+        res.json(userData);
+    })
 
-app.use((req, res) => {
-    res.status(404).sendFile(path.join(__dirname, "../client/404.html"));
-  }); 
+    app.use((req, res) => {
+        res.status(404).sendFile(path.join(__dirname, "../client/404.html"));
+    }); 
 
 
-app.listen(PORT, ()=>{
-    console.log(`server listening at http://localhost:${PORT}`)
-})
+    app.listen(PORT, ()=>{
+        console.log(`server listening at http://localhost:${PORT}`)
+    })

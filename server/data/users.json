@@ -1,7 +1,4 @@
 [
-    {
-        "username":"test",
-        "email":"user@gmail.com",
-        "password":"1234"
-    }
+{"userid":"de2872e1-8504-4a09-bc85-491wd3bht17","username":"test","email":"user@gmail.com","password":"1234"},
+{"userid":"de2772e1-8404-4a09-bc65-491fd3bc3517","username":"Dav","email":"dav@gmail.com","password":"123"}
 ]
