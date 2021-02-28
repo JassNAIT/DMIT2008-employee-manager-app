@@ -16,12 +16,12 @@
   </nav>
   
     <aside class="app-form">
-      <header class="form-header"><h2>Login Form</h2></header>
+      <header class="form-header"><h2 class="center">Login Form</h2></header>
     
       <form id="login" action="/login" method="POST">
         
         <div class="form-control">
-          <label for="email">Account email address <span class="warning"><%-emailWarning%></span></label>
+          <label for="email">Email<span class="warning"><%-emailWarning%></span></label>
           <input
             id="email"
             type="text"
@@ -33,13 +33,12 @@
         </div>
 
         <div class="form-control">
-          <label for="password">
-            Account password<span class="warning"><%-passwordWarning%></span></label>
+          <label for="password">Password<span class="warning"><%-passwordWarning%></span></label>
           <input
             id="password"
             type="text"
             name="password"
-            placeholder="account password "
+            placeholder="****"
             value=""
           />
         </div>

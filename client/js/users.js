@@ -6,16 +6,18 @@ fetch("http://localhost:5000/api/users")
     //display error if user enter wrong input
     if(result == ""){ 
         const errorTemplate =`<p>Sorry cannot find the stock information. Please fill the correct symbol.</p>`;
-        document.querySelector('.user-data').innerHTML = errorTemplate;
+        document.querySelector('.users').innerHTML = errorTemplate;
   }else{
     result.forEach(function(user, index) {
       //display data in html
       console.log(result)
        const successTemplate = `<ul>
+       <li><span><b>User ID:</b></span> ${user['userid']}</li>
        <li><span><b>Username:</b></span> ${user['username']}</li>
        <li><span><b>Email:</b></span> ${user['email']}</li>
+       <li><span><b>Password:</b></span> ${user['password']}</li>
        </ul>`;
-       document.querySelector('.user-data').innerHTML += successTemplate;
+       document.querySelector('.users').innerHTML += successTemplate;
     })
     }
 })

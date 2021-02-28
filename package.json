@@ -10,7 +10,7 @@
     "server": "nodemon server/index.js  --watch ./server",
     "start": "node server/index.js",
     "build": "webpack",
-    "heroku-postbuild": "echo Skip build on Heroku"
+    "heroku-postbuild": ""
   },
   "repository": {
     "type": "git",
