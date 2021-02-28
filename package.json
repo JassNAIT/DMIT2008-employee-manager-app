@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Manage login and signup for the employees",
   "main": "server/index.js",
-  "engines":{
-    "node":"v12.16.x"
+  "engines": {
+    "node": "v12.16.x"
   },
   "scripts": {
     "server": "nodemon server/index.js  --watch ./server",
     "start": "node server/index.js",
-    "build": "node build"
+    "build": "node build server/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "express-validator": "^6.10.0",
