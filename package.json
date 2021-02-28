@@ -9,7 +9,7 @@
   "scripts": {
     "server": "nodemon server/index.js  --watch ./server",
     "start": "node server/index.js",
-    "build": "node build server/index.js"
+    "build": "node build"
   },
   "repository": {
     "type": "git",
