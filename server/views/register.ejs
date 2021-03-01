@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Manager - Register</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav class="navbar">
@@ -23,20 +25,17 @@
           <form id="register" action="/register" method="POST">
        
             <div class="form-control">
-                <label for="username">Username</label>
+                <label for="username">Username<span class="warning"><%-nameError%></span></label>
                 <input id="username" type="text" name="username" placeholder="Joe Smith" value=""/>
-                       <%- nameError %> 
             </div>
               <div class="form-control">
-                  <label for="email">Email</label>
+                  <label for="email">Email<span class="warning"><%-emailError%></span></label>
                   <input id="email" type="text" name="email" placeholder="example@gmail.com" value=""/>
-                  <%- emailError %> 
               </div>
 
               <div class="form-control">
-                <label for="password">Password</label>
+                <label for="password">Password<span class="warning"><%-passwordError%></span></label>
                 <input id="password" type="text" name="password" placeholder="****" value=""/>
-                <%- passwordError %> 
             </div>
 
             <div class="form-control">

@@ -1,5 +1,7 @@
 const fileService = require('./fileService')
 
+
+// authenticate the user
 exports.authenticate = (credential)=>{
     console.log(credential)
   const {email, password} = {...credential}
@@ -23,6 +25,8 @@ exports.authenticate = (credential)=>{
   return auth0;
 }
 
+
+//format the errors
 const formatErrors = function(authObj){
 let emailWarning = '';
 let passwordWarning = '';

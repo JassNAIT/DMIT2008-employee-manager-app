@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Form</title>
+    <title>Employee Manager - Login</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="login">Login</a></li>
+        <li><a href="register">Register</a></li>
+        <li><a href="users">Users</a></li>
       </ul>
   </nav>
   
@@ -19,7 +23,6 @@
       <header class="form-header"><h2 class="center">Login Form</h2></header>
     
       <form id="login" action="/login" method="POST">
-        
         <div class="form-control">
           <label for="email">Email<span class="warning"><%-emailWarning%></span></label>
           <input
@@ -29,7 +32,6 @@
             placeholder="account@email.com"
             value=""
           />
-     
         </div>
 
         <div class="form-control">
