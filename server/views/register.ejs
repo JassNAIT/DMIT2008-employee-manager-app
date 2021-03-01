@@ -16,6 +16,8 @@
     </ul>
 </nav>
 
+  <p class="alert alert-danger"> </p>
+
       <aside class="app-form">
         <header><h2 class="center">Register</h2></header>
           <form id="register" action="/register" method="POST">
@@ -23,15 +25,18 @@
             <div class="form-control">
                 <label for="username">Username</label>
                 <input id="username" type="text" name="username" placeholder="Joe Smith" value=""/>
+                       <%- nameError %> 
             </div>
               <div class="form-control">
                   <label for="email">Email</label>
                   <input id="email" type="text" name="email" placeholder="example@gmail.com" value=""/>
+                  <%- emailError %> 
               </div>
 
               <div class="form-control">
                 <label for="password">Password</label>
                 <input id="password" type="text" name="password" placeholder="****" value=""/>
+                <%- passwordError %> 
             </div>
 
             <div class="form-control">
