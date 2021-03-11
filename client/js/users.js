@@ -1,6 +1,6 @@
 window.addEventListener('load',function(){
 //fetch data from localhost
-fetch("http://localhost:5000/api/users")
+fetch("/api/users")
 .then(res=>res.json())
 .then(result=>{
     //display error if user enter wrong input
